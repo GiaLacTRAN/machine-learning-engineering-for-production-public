@@ -21,5 +21,7 @@ class Wine(BaseModel):
 def predict(wine: Wine):
     batches = wine.batches
     np_batches = np.array(batches)
-    pred = clf.predict(np_batches).tolist()
+    #pred = clf.predict(np_batches).tolist()
+    pred = clf.predict(np_batches)
+    pred = pred.tolist()
     return {"Prediction": pred}
